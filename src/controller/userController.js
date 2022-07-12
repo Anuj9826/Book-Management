@@ -1,7 +1,8 @@
-const mongoose = require("mongoose");
 const userModel = require("../models/userModel");
 const booksModel = require("../models/booksModel");
 const jwt = require("jsonwebtoken")
+
+// ---------------------------------------- CREATE USER ------------------------------------------------------- \\
 
 const createUser = async function (req, res) {
     try {
@@ -48,6 +49,7 @@ const createUser = async function (req, res) {
     }
 };
 
+// ---------------------------------------- LOGIN USER ------------------------------------------------------- \\
 
 const loginUser = async function (req, res) {
     try {

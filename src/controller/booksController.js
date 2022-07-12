@@ -1,7 +1,8 @@
-const mongoose = require("mongoose");
 const userModel = require("../models/userModel");
 const booksModel = require("../models/booksModel");
 const reviewModel = require("../models/reviewModel");
+
+// ------------------------------------------------------ CREATE BOOKS ---------------------------------------------------------- \\
 
 const createBook = async function (req, res) {
     try {
@@ -68,6 +69,8 @@ const createBook = async function (req, res) {
     }
 };
 
+// ------------------------------------------------------ GET ALL BOOKS --------------------------------------------------------- \\
+
 const getBook = async function (req, res) {
     try {
 
@@ -120,6 +123,8 @@ const getBook = async function (req, res) {
     }
 };
 
+// ----------------------------------------------------- GET /books/:bookId ----------------------------------------------------- \\
+
 const getBookById = async function (req, res) {
     try {
         let book_id = req.params.bookId;
@@ -166,6 +171,8 @@ const getBookById = async function (req, res) {
     }
 };
 
+//  ---------------------------------------------------- PUT /books/:bookId ----------------------------------------------------- \\
+
 const updateBook = async function (req, res) {
     try {
         let data = req.body
@@ -209,6 +216,8 @@ const updateBook = async function (req, res) {
             {return res.status(500).send({status: false, message: error.message})}
     }
 };
+
+// --------------------------------------------------- DELETE /books/:booksId --------------------------------------------------- \\
 
 const deleteBookById = async function (req, res) {
     try {
